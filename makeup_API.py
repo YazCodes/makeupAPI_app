@@ -1,12 +1,13 @@
 
-
 import requests
 import  pprint
 
-makeup_surprise = input("Tired of always buying the same products? Enter a random brand name makeup inspo")
-url = "https://makeup.p.rapidapi.com/products.json".format(makeup_surprise)
+url = "https://makeup.p.rapidapi.com/products.json"
 
-querystring = {"product_category":"lipstick","brand":"covergirl"}
+welcomeMessage =input ("Hi Doll! Welcome to 'Makeup your mind' the number one app bringing you major lipstick inspo! are you ready to start?")
+
+querystring = ({"product_category":"lipstick","brand":"covergirl"})
+querystringTwo =({"product_category":"lipstick","brand":"maybelline"})
 
 headers = {
     'x-rapidapi-host': "makeup.p.rapidapi.com",
@@ -16,20 +17,40 @@ headers = {
 response = requests.request("GET", url, headers=headers, params=querystring)
 makeup = response.json()
 
-result = requests.get(url, headers=headers, params=querystring)
+responseTwo = requests.request("GET", url, headers=headers, params=querystringTwo)
+makeupTwo = responseTwo.json()
 
-data = result.json()
+while True:
+    result = requests.get(url, headers=headers, params=querystring)
+    makeup_brand = input('Perfect! do you like covergirl makeup, yes or no?').lower()
+    #makeup_image = input('would you like to see the product?').lower()
 
-print(result.json())
+    if makeup_brand == 'yes':
+        print("Great! Here's a something cute we think you'll love!")
+        print(makeup[0]['name'])
+        print(makeup[0]['description'])
+        break
+    elif makeup_brand == 'no':
+        print("No worries hun, we'll find something else you're gonna love!")
+        break
+    else:
+        print("Hmm somethings gone wrong, please try again :) ")
 
 
-#print(response.text)
-#print(response.json())
+while True:
+    result = requests.get(url, headers=headers, params=querystringTwo)
+    makeup_brandTwo =input("Okay girl, what about Maybeline (they have some absoulte gems!) yes or no?").lower()
+
+    if makeup_brandTwo =='yes':
+        print("Great! Here's a couple i think you'll love")
+        print(makeupTwo[0]['name'])
+        break
+    elif makeup_brandTwo == 'no':
+        print("No worries hun, we'll find something else you're gonna love!")
+        break
+    else:
+        print("Hmm somethings gone wrong, please try again :) ")
 
 
 
-# name= makeup['name']
-#
-# for names in name:
-#     print(name['name'])
-# #print(makeup[0])
+
