@@ -34,9 +34,9 @@ makeupFour = responseThree.json()
 while True:
 
     makeup_brand = input(
-        "Brands! There are so many to choose from but don't worry we'll help. Do you like covergirl?").lower()
+        "Brands! There are so many to choose from but don't worry we'll help. Do you like covergirl?")
 
-    if makeup_brand == 'yes':
+    if makeup_brand == "yes":
         print("Great! Here's a something cute we think you'll love!")
         print("Covergirl lipstick: ", makeup[0]['name'], file=open("makeupResults.txt", "a"))  # Does not print in the
         # terminal but it prints in the makeupResults.txt file. It is the same with all the code containing file=open
@@ -44,22 +44,24 @@ while True:
         print("Here's a little more info about the product:", makeup[0]['description'])
         print("If you're interested here's the link!", makeup[0]['product_link'])
         break
-    elif makeup_brand == 'no':
+    elif makeup_brand == "no":
         print("No worries hun, we'll find something else you're gonna love!")
         break
     else:
         print("Hmm somethings gone wrong, please try again :) ")
+        break
 
 # Makeup brand and product link questions part 2
 while True:
-    makeup_brandTwo = input("Okay girl, what about Maybelline (they have some absoulte gems!) yes or no?").lower()
+    makeup_brandTwo = input("Okay girl, what about Maybelline (they have some absoulte gems!) yes or no?")
 
-    if makeup_brandTwo == 'yes':
-        print("Great! Here's a couple i think you'll love")
+    if makeup_brandTwo == "yes":
+        print("Great! Here's a couple in your file i think you'll love")
         print("Maybelline lipstick options : ", makeupTwo[1]['name'], makeupTwo[6]['name'], file=open("makeupResults"
                                                                                                       ".txt", "a"))
+
         break
-    elif makeup_brandTwo == 'no':
+    elif makeup_brandTwo == "no":
         print("No worries hun, we'll find something else you're gonna love!")
         break
     else:
@@ -68,10 +70,10 @@ while True:
 
 # Formula of lipstick and image link questions
 while True:
-    makeup_Formula = input("So most importantly, matte or creamy formula?").lower()
+    makeup_Formula = input("So most importantly, matte or creamy formula?")
 
-    if makeup_Formula == 'matte':
-        print("Great choice! Here's a couple of matte lipsticks from Maybeline")
+    if makeup_Formula == "matte":
+        print("Great choice! Here's a couple of matte lipsticks have been added")
         print("Options for matte lip:", makeupTwo[2]['name'], makeupTwo[4]['name'], file=open("makeupResults.txt", "a"))
 
         imageQuestion = input("Would you like a pic of the lipsticks?")
@@ -81,7 +83,7 @@ while True:
             print("No problem!")
             break
 
-    elif makeup_Formula == 'creamy':
+    elif makeup_Formula == "creamy":
         print("Yass, we love a creamy formula. Top tip: If you add a clear gloss on top it creates a long lasting "
               "lipgloss!")
         print("Three creamy lipstick options are saved in your file :)")
@@ -89,11 +91,11 @@ while True:
             "makeupResults.txt", "a"))
 
         imageQuestionTwo = input("Would you like a pic of the lipsticks?")
-        if imageQuestionTwo == 'yes':
+        if imageQuestionTwo == "yes":
             print("Creamy lipstick picture 1 :", makeupTwo[0]['image_link'])
             print("Creamy lipstick picture 2 :", makeupTwo[3]['image_link'])
             print("Creamy lipstick picture 3 :", makeupTwo[5]['image_link'])
-        elif imageQuestionTwo == 'no':
+        elif imageQuestionTwo == "no":
             print("No problem :)")
         break
 
@@ -104,7 +106,7 @@ while True:
 # Beauty infulencer, budget and website link questions.
 while True:
 
-    makeup_Look = input("Who is your fave beauty influencer Kylie Jenner or Huda Kattan ").lower()
+    makeup_Look = input("Who is your fave beauty influencer Kylie Jenner or Huda Kattan ")
 
     if makeup_Look == "kylie jenner":
         print("Yup good choice! When it comes to lipsticks Queen Kylie doesn't disappoint")
@@ -129,7 +131,7 @@ while True:
               "your file! ")
         print(makeupFour[4]['name'], makeupFour[5]['name'], file=open("makeupResults.txt", "a"))
 
-        websiteQuestion = input("Would you like to check out more Smashbox products?").lower()
+        websiteQuestion = input("Would you like to check out more Smashbox products?")
         if websiteQuestion == "yes":
             print("Smashbox website link", makeupFour[4]['website_link'])
             print("I really hope you enjoy all the new lipstick options specifically picked for you! ")
